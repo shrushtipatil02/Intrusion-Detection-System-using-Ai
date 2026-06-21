@@ -1,9 +1,3 @@
-# Aegis AI-IDS: AI-Enhanced Intrusion Detection System
-
-[![Python Version](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.14-blue.svg)](https://www.python.org/)
-[![Framework](https://img.shields.io/badge/framework-Flask-lightgrey.svg)](https://flask.palletsprojects.com/)
-[![Library](https://img.shields.io/badge/library-Scikit--Learn-orange.svg)](https://scikit-learn.org/)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 In an increasingly interconnected digital landscape, the security of organizational networks and sensitive data is of paramount importance. **Aegis AI-IDS** is a modern, AI-powered Intrusion Detection System that leverages machine learning to detect, classify, and respond to network intrusions with high accuracy. 
 
@@ -120,50 +114,4 @@ python app.py
 
 ---
 
-## 🔌 API Integration
 
-You can integrate Aegis AI-IDS with custom proxies or Web Application Firewalls (WAF) using JSON payloads.
-
-### request
-- **Method**: `POST`
-- **Route**: `/predict`
-- **Headers**: `Content-Type: application/json`
-- **Body**:
-```json
-{
-  "flow_duration": 5006127.0,
-  "total_fwd_packets": 4.0,
-  "total_backward_packets": 4.0,
-  "total_length_fwd_packets": 447.0
-}
-```
-
-### Response (200 OK)
-```json
-{
-  "status": "success",
-  "prediction": "Web Attack - Sql Injection",
-  "inputs": {
-    "flow_duration": 5006127.0,
-    "total_fwd_packets": 4.0,
-    "total_backward_packets": 4.0,
-    "total_length_fwd_packets": 447.0
-  }
-}
-```
-
-### Querying with cURL
-```bash
-curl -X POST http://localhost:5000/predict \
-  -H "Content-Type: application/json" \
-  -d '{"flow_duration":76978.0,"total_fwd_packets":2.0,"total_backward_packets":2.0,"total_length_fwd_packets":78.0}'
-```
-
----
-
-## 📄 License
-Distributed under the MIT License. See `LICENSE` for details.
-
-## 🤝 Acknowledgments
-- Canadian Institute for Cybersecurity (CIC) for the CICIDS2017 Dataset.
-- Scikit-Learn developers for the classifier framework.
